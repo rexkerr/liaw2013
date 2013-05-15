@@ -1,4 +1,4 @@
-## How do I Crerate a Variable Sized Array?
+## How do I Create a Variable Sized Array?
 
 C++ arrays are not variable sized and do not support dynamic resizing.
 That said, there is a container, std::vector<T>, that gives you the
