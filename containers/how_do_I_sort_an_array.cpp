@@ -4,17 +4,17 @@
 
 namespace
 {
-   std::vector<int> vect = { 4, 42, 7, 16, 99 };
-
    void print_vector(std::vector<int> v)
    {
-      std::for_each(begin(vect), end(vect), [](int i){ std::cout << i << " " << std::endl; });
+      std::for_each(begin(v), end(v), [](int i){ std::cout << i << " " << std::endl; });
       std::cout << std::endl;
    }
 }
 
 int main()
 {
+   std::vector<int> vect = { 4, 42, 7, 16, 99 };
+
    std::cout << "Before sorting:  " << std::endl;
    print_vector(vect);
 
