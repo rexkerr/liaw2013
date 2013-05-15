@@ -2,8 +2,10 @@
 
 C++ vectors can be resized easily using the .resize() method.  Resize
 takes two parameters, the new size and [optionally] the default value
-to be assigned to newly added elements [if any].  resize() can be used
-to both grow and shrink the vector.
+to be assigned to newly added elements [if any].  If no default value
+is provided, the new elements are default initialized.
+
+resize() can be used to both grow and shrink the vector.  
 
 ```c++
 std::vector<int> v = {1, 2, 3};
