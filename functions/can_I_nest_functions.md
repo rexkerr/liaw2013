@@ -1,24 +1,38 @@
+## Can I nest functions?
 
+Not directly.  However, you can define classes with static member functions and call them.  Starting with C++11, you can also define lambda functions and bind them to a variable, which you can then call.
 
-no, but... local lambda
-
-
+```c++
+// This will not compile
 void f()
 {
-  auto l []{ /* do stuff */ };
+  void nested() {
+  }
 
-  l();
-  l();
-  l();
+  nested();
 }
 
-
-void f()
+// Using a nested struct
+void f_nested_struct()
 {
-   struct S
-   {
-      static void foo() {}
-   };
+  struct fn_holder
+  {
+    static void nested()
+    {
+      // your code here
+    }
+  };
 
-   S::foo();
+  fn_holder::nested();
 }
+
+// Using a local lambda
+void f_with_lambda()
+{
+  auto nested = []()
+  {
+    // your code here
+  };
+  nested();
+}
+```
