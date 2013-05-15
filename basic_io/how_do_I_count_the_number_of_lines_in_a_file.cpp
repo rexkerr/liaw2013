@@ -1,13 +1,19 @@
 #include <fstream>
 #include <iostream>
 
-int main() {
-    std::ifstream file(__FILE__);
-    std::string str;
+// Count number of lines in file. Unfortunately std::ifstream takes const char* as
+// filename-argument, so we're gonna do the same.
+int countLinesInFile(const char* fileName) {
+    std::ifstream file(fileName);
+    std::string line;
     int lineCount = 0;
-    while (getline(file, str)) {
+    while (getline(file, line)) {
         ++lineCount;
     }
-    std::cout << lineCount << "\n";
+    return lineCount;
+}
+
+int main() {
+    std::cout << countLinesInFile(__FILE__) << std::endl;
 }
 
