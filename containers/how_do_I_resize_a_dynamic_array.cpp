@@ -8,7 +8,7 @@ namespace
    {
       std::cout << "size:  " << v.size() << std::endl;
       std::cout << "content:  ";
-      std::for_each(begin(v), end(v), [](int i){ std::cout << i << " " << std::endl; });
+      std::for_each(begin(v), end(v), [](int i){ std::cout << i << " "; });
       std::cout << "\n" << std::endl;
    }
 }
@@ -24,6 +24,10 @@ int main()
 
    v.resize(7, 42);
    // Vector now contains: 1,2,3,0,0,42,42
+   print_vector(v);
+
+   v.resize(2);
+   // Vector now contains: 1,2
    print_vector(v);
 }
 
