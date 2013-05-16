@@ -21,7 +21,7 @@ int extraarg_callback(char const*, unsigned) {}
 
 int main()
 {
-   // the callback with convertible types with work directly with the function object
+   // the callback with convertible types will work directly with the function object
    caller_fnobj(&cvt_callback);
 
    // the callback with an extra argument will work with the function object if
